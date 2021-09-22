@@ -8,7 +8,9 @@ object FuzzySet {
   }
 }
 
-case class FuzzySet[T](val elements: Map[T, Float] = HashMap.empty[T, Float]) {
+final case class FuzzySet[T](
+    val elements: Map[T, Float] = HashMap.empty[T, Float]
+) {
   def +(other: FuzzySet[T]): FuzzySet[T] = {
     FuzzySet((elements.keySet ++ other.elements.keySet).map { key =>
       key -> elements
