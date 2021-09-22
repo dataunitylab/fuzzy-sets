@@ -25,7 +25,6 @@ wartremoverErrors ++= Seq(
   Wart.ArrayEquals,
   Wart.EitherProjectionPartial,
   Wart.Enumeration,
-  Wart.Equals,
   Wart.ExplicitImplicitTypes,
   Wart.FinalCaseClass,
   Wart.MutableDataStructures,
