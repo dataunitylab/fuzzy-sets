@@ -4,6 +4,8 @@ ThisBuild / scalaVersion     := "2.11.12"
 ThisBuild / versionScheme     := Some("early-semver")
 ThisBuild / organization     := "edu.rit.cs.dul"
 ThisBuild / organizationName := "Data Unity Lab"
+ThisBuild / githubOwner       := "dataunitylab"
+ThisBuild / githubRepository  := "fuzzy-sets"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
