@@ -1,6 +1,6 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.6"
+ThisBuild / scalaVersion     := "2.11.12"
 ThisBuild / versionScheme     := Some("early-semver")
 ThisBuild / organization     := "edu.rit.cs.dul"
 ThisBuild / organizationName := "Data Unity Lab"
