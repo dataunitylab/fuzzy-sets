@@ -35,7 +35,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: olafurpg/setup-scala@v10
-    - name: Publish package
+    - name: Publish site
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: sbt publish
+      run: |
+        sbt makeSite
+        sbt publishToGitHubPages
