@@ -1,4 +1,4 @@
-package edu.rit.cs.dul.fuzzysets
+package com.github.dataunitylab.fuzzysets
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

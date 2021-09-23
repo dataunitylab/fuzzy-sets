@@ -2,7 +2,7 @@ import Dependencies._
 
 ThisBuild / scalaVersion     := "2.11.12"
 ThisBuild / versionScheme     := Some("early-semver")
-ThisBuild / organization     := "edu.rit.cs.dul"
+ThisBuild / organization     := "com.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
