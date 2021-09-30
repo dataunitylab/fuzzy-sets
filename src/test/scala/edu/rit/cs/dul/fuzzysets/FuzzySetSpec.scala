@@ -31,6 +31,11 @@ class FuzzySetSpec extends AnyFlatSpec with Matchers {
     set.similarity(set) should be (1.0f)
   }
 
+  it should "compute equivalent sets with multiple elementsas exactly similar" in {
+    val set = FuzzySet(Map("foo" -> 1.0f, "bar" -> 1.0f))
+    set.similarity(set) should be (1.0f)
+  }
+
   it should "compute disjoint sets as not at all similar" in {
     FuzzySet("foo" -> 0.3f).similarity(FuzzySet("bar" -> 1.0f)) should be (0.0f)
   }

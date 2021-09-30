@@ -59,7 +59,7 @@ final case class FuzzySet[T](
 
   def similarity(other: FuzzySet[T]): Float = {
     val allKeys = elements.keySet ++ other.elements.keySet
-    allKeys.map { key =>
+    allKeys.toSeq.map { key =>
       val u = elements.getOrElse(key, 0.0f)
       val v = other.elements.getOrElse(key, 0.0f)
       if (u == 0.0f && v == 0.0f) {
