@@ -1,9 +1,11 @@
 import Dependencies._
 
 ThisBuild / scalaVersion     := "2.11.12"
-ThisBuild / versionScheme     := Some("early-semver")
+ThisBuild / versionScheme    := Some("early-semver")
 ThisBuild / organization     := "com.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
+ThisBuild / githubOwner      := "dataunitylab"
+ThisBuild / githubRepository := "fuzzy-sets"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
