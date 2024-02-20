@@ -2,12 +2,17 @@ import Dependencies._
 
 ThisBuild / scalaVersion     := "2.11.12"
 ThisBuild / versionScheme    := Some("early-semver")
-ThisBuild / organization     := "com.github.dataunitylab"
+ThisBuild / organization     := "io.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
-ThisBuild / githubOwner      := "dataunitylab"
-ThisBuild / githubRepository := "fuzzy-sets"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
+
+publishTo := sonatypePublishToBundle.value
+publishMavenStyle := true
+licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
+import xerial.sbt.Sonatype._
+sonatypeProjectHosting := Some(GitHubHosting("dataunitylab", "fuzzy-sets", "mmior@mail.rit.edu"))
+ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
 
 val nonConsoleCompilerOptions = Seq(
   "-feature",
