@@ -1,4 +1,4 @@
-package com.github.dataunitylab.fuzzysets
+package io.github.dataunitylab.fuzzysets
 
 import scala.collection.immutable.HashMap
 

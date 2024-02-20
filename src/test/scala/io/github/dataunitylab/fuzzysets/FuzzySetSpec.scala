@@ -1,4 +1,4 @@
-package com.github.dataunitylab.fuzzysets
+package io.github.dataunitylab.fuzzysets
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
