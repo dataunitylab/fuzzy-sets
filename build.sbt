@@ -1,6 +1,6 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.11.12"
+ThisBuild / scalaVersion     := "2.13.10"
 ThisBuild / versionScheme    := Some("early-semver")
 ThisBuild / organization     := "io.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
@@ -17,7 +17,7 @@ ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
 val nonConsoleCompilerOptions = Seq(
   "-feature",
   "-Xfatal-warnings",
-  "-Ywarn-unused-import",
+  "-Ywarn-unused:imports",
   "-deprecation"
 )
 
@@ -42,7 +42,6 @@ wartremoverErrors ++= Seq(
   Wart.Recursion,
   Wart.Return,
   Wart.StringPlusAny,
-  Wart.TraversableOps,
   Wart.TryPartial,
   Wart.Var,
   Wart.While,
