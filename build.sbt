@@ -1,6 +1,5 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.10"
 ThisBuild / versionScheme    := Some("early-semver")
 ThisBuild / organization     := "io.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
@@ -24,6 +23,7 @@ val nonConsoleCompilerOptions = Seq(
 lazy val root = (project in file("."))
   .settings(
     name := "Fuzzy Sets",
+    crossScalaVersions := Seq("2.12.15", "2.13.10"),
     libraryDependencies += scalaTest % Test,
     scalacOptions ++= nonConsoleCompilerOptions
   )

@@ -9,7 +9,7 @@ on:
     branches:
       - main
 jobs:
-  test:
+  test-213:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -21,16 +21,26 @@ jobs:
     - name: Test
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: sbt coverage test coverageReport
+      run: sbt '++ 2.13.10' coverage test coverageReport
     - name: Upload coverage
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: true
 
+  test-212:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: olafurpg/setup-scala@v10
+    - name: Test
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: sbt '++ 2.12.15' test
+
   publish:
     if: ${{ github.event_name != 'pull_request' }}
-    needs: [test]
+    needs: [test-213, test-212]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
