@@ -12,7 +12,7 @@ jobs:
   test-213:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: olafurpg/setup-scala@v14
     - name: Scalafmt
       run: sbt scalafmtCheck
@@ -31,7 +31,7 @@ jobs:
   test-212:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: olafurpg/setup-scala@v14
     - name: Test
       env:
@@ -43,7 +43,7 @@ jobs:
     needs: [test-213, test-212]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: olafurpg/setup-scala@v14
     - name: Publish site
       env:
