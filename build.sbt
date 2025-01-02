@@ -1,7 +1,7 @@
 import Dependencies._
 
-ThisBuild / versionScheme    := Some("early-semver")
-ThisBuild / organization     := "io.github.dataunitylab"
+ThisBuild / versionScheme := Some("early-semver")
+ThisBuild / organization := "io.github.dataunitylab"
 ThisBuild / organizationName := "Data Unity Lab"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
@@ -10,7 +10,9 @@ publishTo := sonatypePublishToBundle.value
 publishMavenStyle := true
 licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
 import xerial.sbt.Sonatype._
-sonatypeProjectHosting := Some(GitHubHosting("dataunitylab", "fuzzy-sets", "mmior@mail.rit.edu"))
+sonatypeProjectHosting := Some(
+  GitHubHosting("dataunitylab", "fuzzy-sets", "mmior@mail.rit.edu")
+)
 ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
 
 val nonConsoleCompilerOptions = Seq(
@@ -23,7 +25,7 @@ val nonConsoleCompilerOptions = Seq(
 lazy val root = (project in file("."))
   .settings(
     name := "Fuzzy Sets",
-    crossScalaVersions := Seq("2.12.15", "2.13.10"),
+    crossScalaVersions := Seq("2.12.20", "2.13.10"),
     libraryDependencies += scalaTest % Test,
     scalacOptions ++= nonConsoleCompilerOptions
   )
@@ -44,15 +46,15 @@ wartremoverErrors ++= Seq(
   Wart.StringPlusAny,
   Wart.TryPartial,
   Wart.Var,
-  Wart.While,
+  Wart.While
 )
 
 Compile / compile / wartremoverErrors += Wart.NonUnitStatements
 
-Compile / console / scalacOptions := (console / scalacOptions)
-  .value.filterNot(opt =>
+Compile / console / scalacOptions := (console / scalacOptions).value.filterNot(
+  opt =>
     opt.contains("wartremover") ||
-    nonConsoleCompilerOptions.contains(opt)
+      nonConsoleCompilerOptions.contains(opt)
 )
 
 enablePlugins(GitHubPagesPlugin)
